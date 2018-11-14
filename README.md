@@ -25,13 +25,13 @@ is collected and applied directly at binary level and there is no
 imperfect conversion step trying to map PC addresses back to source code
 that relies on the accuracy of debug information. Since BOLT doesn't rely
 on source code, it can also optimize assembly-written code or library code
-you are statically liking for which there are no sources available.
+you are statically linking for which there are no sources available.
 
 Furthermore, profiles used in compilers and BOLT,
 for space-efficiency reasons, are not traces but an aggregation of execution
 counts. This aggregation loses information: a given function accumulates
 the superposition of many traces, each one possibly exercising a different path
-of basic blocks, e.g. depending on its callee. This aggregation has limited
+of basic blocks, e.g. depending on its callee. Thus, it has limited
 applicability and significant code
 changes may render it stale. For example, after the compiler decides to inline a function that
 was not previously inlined in the code where the profile was originally collected,
