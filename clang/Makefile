@@ -39,8 +39,6 @@ PGOPROFILE     := $(BENCHMARKS)/stage2/clang.profdata
 CLANGPGO       := $(BENCHMARKS)/clangpgo/install/bin/clang
 RAWDATA        := $(BENCHMARKS)/stage2/perf.data
 BOLTDATA       := $(BENCHMARKS)/stage2/bolt.fdata
-BOLTEDCLANG    := $(BENCHMARKS)/clangbolt/install/bin/clang
-BOLTEDPGOCLANG := $(BENCHMARKS)/clangpgobolt/install/bin/clang
 BOLTLOG        := $(TOPLEV)/bolt.log
 MEASUREMENTS   := $(TOPLEV)/measurements
 COMPARISON     := $(TOPLEV)/comparison.txt
@@ -61,6 +59,14 @@ endif
 .PHONY: all clean distclean clean_measurements
 
 all: print_results_clangpgo print_results_clangbolt print_results_clangpgobolt
+
+download_sources: $(CLANGSOURCE) $(GCCSOURCE) $(BOLTSOURCE)
+
+build_all: $(BOLT) $(CLANGSTAGE1) $(CLANGPGO) \
+  $(BENCHMARKS)/clangbolt/install/bin/clang \
+  $(BENCHMARKS)/clangpgobolt/install/bin/clang
+
+results: print_results_clangpgo print_results_clangbolt print_results_clangpgobolt
 
 # Step 1: Download clang sources
 $(CLANGSOURCE):

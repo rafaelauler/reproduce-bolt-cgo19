@@ -44,6 +44,14 @@ endif
 
 all: print_results_gccpgo print_results_gccbolt print_results_gccpgobolt
 
+download_sources: $(CLANGSOURCE) $(GCCSOURCE) $(BOLTSOURCE)
+
+build_all: $(BOLT) $(GCCSTAGE1) $(GCCPGO) \
+  $(BENCHMARKS)/gccbolt/install/bin/gcc \
+  $(BENCHMARKS)/gccpgobolt/install/bin/gcc
+
+results: print_results_gccpgo print_results_gccbolt print_results_gccpgobolt
+
 # Step 1: Download GCC sources.
 $(GCCSOURCE):
 	mkdir -p $(BENCHMARKS)

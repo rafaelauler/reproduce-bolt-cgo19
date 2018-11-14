@@ -113,3 +113,26 @@ using your manually downloaded sources. These are the source folders used:
 >                     # (check step 9)
 > src/llvm            # llvm repo with BOLT (check step 7)
 ```
+
+If you wish to run the Makefile steps organized in separate download, build and
+experimental phases, you can use special rules to do so. This can be specially
+useful if you need to download all sources first in a machine that has internet
+connection, then transfer the files to machine with restricted connection and
+then resume build and experimental steps there. The special rules are:
+
+```
+> make download_sources
+> make build_all
+> make results
+```
+
+## makeinfo failures
+
+When building gcc, makeinfo failures can happen if the times of source files
+are inconsistent. In this case, you will see a "missing makeinfo" failure in
+a gcc build. Notice that this message may be present in logs, but it is not
+a fatal error. It is only fatal if make thinks it needs to update the
+documentation files. This may happen if you manually copied gcc source files
+without preserving original file dates, tricking make into thinking it needs
+to call makeinfo to regenerate tex files. Always copy gcc sources by
+packing them with the original dates.
