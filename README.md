@@ -59,7 +59,7 @@ Figures 7 and 8 of the paper.
 These Makefile rules are based on the steps described at
 https://github.com/facebookincubator/BOLT/blob/master/docs/OptimizingClang.md
 
-# Hardware pre-requisites
+# Hardware prerequisites
 
 You will need a machine with a fair amount of RAM (32GB RAM is OK for the GCC
 evaluation, but more is needed for Clang because of the expensive LTO tasks
@@ -72,9 +72,9 @@ code base several times (adjust the NUMCORES Makefile variable). The whole
 process (evaluating GCC and Clang) takes about 6 hours using 40 threads running
 simultaneously on our Broadwell setup (see below for specs).
 
-# Software pre-requisites
+# Software prerequisites
 
-We present next a brief list of software pre-requisites along with the
+We present next a brief list of software prerequisites along with the
 corresponding CentOS 7 package install command:
 
 ```
