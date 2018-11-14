@@ -188,7 +188,8 @@ results were the following:
 > clangpgobolt is 50.55% faster than baseline
 ```
 
-GCC results for the Broadwell test machine:
+The GCC evaluation took 2 hours and 57 minutes on our Broadwell test machine
+and the results are the following:
 ```
 > gccpgo is 10.57% faster than baseline
 > gccbolt is 11.57% faster than baseline
