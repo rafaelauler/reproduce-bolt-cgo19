@@ -6,7 +6,7 @@ PGO, still leaves opportunities for a post-link optimizer such as BOLT to do
 a better job at basic block placement and function reordering, significantly
 improving workload performance.
 
-In a nutshell, the paper advocates for a two-step profiling compilation
+In a nutshell, the paper advocates for a two-step profiling
 pipeline, showing that doing a single pass of profiling collection is not
 enough. In this two-step approach, PGO or AutoFDO can be used to feed the
 compiler with profile information, which is important for obtaining better
