@@ -56,6 +56,9 @@ you want to evaluate, and run make as in the following commands:
 Check the results.txt file with the numbers for the clang-build bars in
 Figures 7 and 8 of the paper.
 
+These Makefile rules are based on the steps described at
+https://github.com/facebookincubator/BOLT/blob/master/docs/OptimizingClang.md
+
 # Hardware pre-requisites
 
 You will need a machine with a fair amount of RAM (32GB RAM is OK for the GCC
@@ -68,9 +71,6 @@ The lower your core count, the slower it will be, as this is building a large
 code base several times (adjust the NUMCORES Makefile variable). The whole
 process (evaluating GCC and Clang) takes about 6 hours using 40 threads running
 simultaneously on our Broadwell setup (see below for specs).
-
-These Makefile rules are based on the steps described at
-https://github.com/facebookincubator/BOLT/blob/master/docs/OptimizingClang.md
 
 # Software pre-requisites
 
