@@ -31,7 +31,7 @@ issues, such as mapping back from binary addresses to high-level DWARF.
 ## Usage
 
 Clone this repo, cd to either clang or gcc folder, depending on the workload
-you want to evaluate, and run the following command:
+you want to evaluate, and run make as in the following commands:
 
 ```
 > cd clang      # or gcc
@@ -49,7 +49,7 @@ collection. By now, LBR is pretty established on Intel processors -
 microarchitectures Sandy Bridge (2011) and later supports LBR.
 The lower your core count, the slower it will be, as this is building a large
 code base several times, which benefits with a higher core count. The whole
-process takes about 6 hours in 48-core machine for both evaluations.
+process takes about 6 hours in a 48-core machine for both evaluations.
 
 These Makefile rules are based on the steps described at
 https://github.com/facebookincubator/BOLT/blob/master/docs/OptimizingClang.md
@@ -57,13 +57,16 @@ https://github.com/facebookincubator/BOLT/blob/master/docs/OptimizingClang.md
 List of pre-requisites along with the corresponding CentOS 7 package install
 command:
 
-git -- yum install git
-cmake -- yum install cmake
-ninja -- yum install ninja-build
-flex -- yum install flex
+```
+> git -- yum install git
+> cmake -- yum install cmake
+> ninja -- yum install ninja-build
+> flex -- yum install flex
+```
 
 Since we build Clang/LLVM, check here for a list
 of requirements: http://llvm.org/docs/GettingStarted.html#requirements
+
 In general, for building Clang/LLVM, you should be fine if your system has a
 relatively modern C++ compiler such as gcc version 4.8.0 or higher.
 
