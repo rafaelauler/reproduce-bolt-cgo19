@@ -169,7 +169,7 @@ results were the following:
 > gccpgobolt is 28.40% faster than baseline
 ```
 
-The Clang evaluation should be slightly faster. Clang results were the
+The Clang evaluation took 3 hours and 45 minutes. Clang results were the
 following:
 
 ```
